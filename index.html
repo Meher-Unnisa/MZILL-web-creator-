@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MZill Web Solutions - Hyderabad</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#ff6b00;
+border-radius:20px;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(12px);
+z-index:999;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+color:#fff;
+}
+
+.logo span{
+color:#ff6b00;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#fff;
+font-size:15px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff6b00;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding:140px 7% 80px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
+background:
+radial-gradient(circle at top right,#ff6b0030,transparent 30%),
+radial-gradient(circle at bottom left,#00bfff20,transparent 30%);
+}
+
+.hero-text h4{
+font-size:18px;
+color:#ff6b00;
+margin-bottom:15px;
+}
+
+.hero-text h1{
+font-size:72px;
+line-height:1.1;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero-text h1 span{
+color:#ff6b00;
+}
+
+.hero-text p{
+font-size:17px;
+line-height:1.9;
+color:#d1d1d1;
+margin-bottom:35px;
+max-width:600px;
+}
+
+.hero-btns{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 32px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#ff6b00;
+color:white;
+}
+
+.btn-primary:hover{
+background:#ff8800;
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+border:2px solid #ff6b00;
+color:#ff6b00;
+}
+
+.btn-secondary:hover{
+background:#ff6b00;
+color:white;
+}
+
+.hero-card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+padding:35px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,0.1);
+box-shadow:0 0 40px rgba(255,107,0,0.2);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+/* BOOKING FORM */
+
+.booking-form h2{
+font-size:32px;
+margin-bottom:25px;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+width:100%;
+padding:16px;
+border:none;
+outline:none;
+border-radius:14px;
+background:#111827;
+color:white;
+font-size:15px;
+}
+
+.form-group textarea{
+height:120px;
+resize:none;
+}
+
+.submit-btn{
+width:100%;
+padding:16px;
+border:none;
+border-radius:14px;
+background:#25D366;
+color:white;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-btn:hover{
+transform:scale(1.02);
+}
+
+/* STATS */
+
+.stats{
+padding:60px 7%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+background:#0d1324;
+}
+
+.stat-box{
+background:#111827;
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:0.4s;
+}
+
+.stat-box:hover{
+transform:translateY(-10px);
+background:#1a2238;
+}
+
+.stat-box h2{
+font-size:42px;
+color:#ff6b00;
+margin-bottom:10px;
+}
+
+/* SECTION */
+
+section{
+padding:90px 7%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.section-title p{
+color:#aaa;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.service-card{
+background:#111827;
+padding:35px;
+border-radius:25px;
+transition:0.4s;
+border:1px solid transparent;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+border-color:#ff6b00;
+box-shadow:0 0 30px rgba(255,107,0,0.2);
+}
+
+.service-card i{
+font-size:42px;
+color:#ff6b00;
+margin-bottom:20px;
+}
+
+.service-card h3{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.service-card p{
+line-height:1.8;
+color:#ccc;
+}
+
+/* PROJECTS */
+
+.projects{
+background:#0d1324;
+}
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.project-card{
+background:#111827;
+border-radius:25px;
+overflow:hidden;
+transition:0.4s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+.project-top{
+height:200px;
+background:linear-gradient(135deg,#ff6b00,#ff8800);
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:60px;
+}
+
+.project-content{
+padding:30px;
+}
+
+.project-content h3{
+margin-bottom:15px;
+font-size:24px;
+}
+
+.project-content p{
+color:#ccc;
+line-height:1.8;
+}
+
+/* LOCATION */
+
+.location-box{
+background:#111827;
+padding:40px;
+border-radius:25px;
+text-align:center;
+}
+
+.location-box i{
+font-size:50px;
+color:#ff6b00;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px 7%;
+text-align:center;
+background:#050816;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+
+footer p{
+color:#aaa;
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp-float{
+position:fixed;
+width:65px;
+height:65px;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+text-decoration:none;
+z-index:999;
+box-shadow:0 0 20px rgba(37,211,102,0.5);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.1);
+}
+100%{
+transform:scale(1);
+}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero-text h1{
+font-size:52px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.nav-links{
+display:none;
+}
+
+.hero-text h1{
+font-size:40px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.section-title h2{
+font-size:34px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="logo">M<span>Z</span>ill</div>
+
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h4>Hyderabad Based Website Developer</h4>
+
+<h1>
+Modern <span>Websites</span><br>
+For Every Business
+</h1>
+
+<p>
+I create premium modern websites for businesses in Hyderabad and all over India. 
+From portfolio websites to e-commerce stores, booking systems, business listing platforms, salon websites, hospital management websites, restaurant websites, real estate websites and custom web applications.
+</p>
+
+<div class="hero-btns">
+
+<a href="#contact" class="btn btn-primary">
+Book Website
+</a>
+
+<a href="#projects" class="btn btn-secondary">
+View Projects
+</a>
+
+</div>
+
+</div>
+
+<!-- BOOKING FORM -->
+
+<div class="hero-card booking-form" id="contact">
+
+<h2>Book Your Website</h2>
+
+<div class="form-group">
+<input type="text" id="name" placeholder="Your Name">
+</div>
+
+<div class="form-group">
+<input type="tel" id="phone" placeholder="Mobile Number">
+</div>
+
+<div class="form-group">
+<input type="email" id="email" placeholder="Email Address">
+</div>
+
+<div class="form-group">
+<select id="service">
+<option>Select Service</option>
+
+<option>Business Website</option>
+<option>E-Commerce Website</option>
+<option>Portfolio Website</option>
+<option>Restaurant Website</option>
+<option>Salon Website</option>
+<option>Hospital Website</option>
+<option>Real Estate Website</option>
+<option>School / College Website</option>
+<option>Booking Website</option>
+<option>Interior Design Website</option>
+<option>Gym Website</option>
+<option>Travel Website</option>
+<option>Event Website</option>
+
+</select>
+</div>
+
+<div class="form-group">
+<textarea id="message" placeholder="Tell About Your Project"></textarea>
+</div>
+
+<button class="submit-btn" onclick="sendWhatsApp()">
+<i class="fab fa-whatsapp"></i>
+ Book Through WhatsApp
+</button>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stat-box">
+<h2>150+</h2>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat-box">
+<h2>100%</h2>
+<p>Responsive Design</p>
+</div>
+
+<div class="stat-box">
+<h2>24/7</h2>
+<p>Client Support</p>
+</div>
+
+<div class="stat-box">
+<h2>SEO</h2>
+<p>Optimized Websites</p>
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+<h2>Services I Provide</h2>
+<p>Modern website solutions for every business category</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<i class="fas fa-laptop-code"></i>
+<h3>Business Websites</h3>
+<p>
+Professional websites for local businesses, startups and companies with modern UI design, WhatsApp integration and lead generation forms.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-cart-shopping"></i>
+<h3>E-Commerce Stores</h3>
+<p>
+Online shopping websites with payment gateway integration, product management, orders tracking and admin dashboard.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-user"></i>
+<h3>Portfolio Websites</h3>
+<p>
+Personal portfolio websites for freelancers, developers, doctors, designers, journalists and creators.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-building"></i>
+<h3>Real Estate Websites</h3>
+<p>
+Property listing websites with map integration, enquiry forms, property management and image galleries.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-utensils"></i>
+<h3>Restaurant Websites</h3>
+<p>
+Food ordering websites with online menu, table booking, delivery integration and customer reviews.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-scissors"></i>
+<h3>Salon & Spa Websites</h3>
+<p>
+Appointment booking websites for salons and beauty parlours with online scheduling and WhatsApp booking.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-hospital"></i>
+<h3>Hospital Websites</h3>
+<p>
+Hospital management and clinic websites with doctor profiles, patient booking and emergency contacts.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-dumbbell"></i>
+<h3>Gym Websites</h3>
+<p>
+Fitness websites with membership plans, trainer details, online registration and workout programs.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+<div class="section-title">
+<h2>Website Projects I Create</h2>
+<p>Different types of websites for local services and businesses</p>
+</div>
+
+<div class="project-grid">
+
+<div class="project-card">
+
+<div class="project-top">
+<i class="fas fa-store"></i>
+</div>
+
+<div class="project-content">
+<h3>Local Business Websites</h3>
+
+<p>
+Websites for shops, electrical services, furniture works, AC repair, CCTV installation, smart IoT devices and local Hyderabad businesses.
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-top">
+<i class="fas fa-house"></i>
+</div>
+
+<div class="project-content">
+<h3>Interior & Furniture Websites</h3>
+
+<p>
+Modern furniture and interior websites with gallery, booking forms, modular kitchen design and customer enquiry system.
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-top">
+<i class="fas fa-briefcase"></i>
+</div>
+
+<div class="project-content">
+<h3>Corporate Company Websites</h3>
+
+<p>
+Professional websites for agencies, startups and companies with animations, modern UI and SEO optimization.
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-top">
+<i class="fas fa-calendar-check"></i>
+</div>
+
+<div class="project-content">
+<h3>Booking Platforms</h3>
+
+<p>
+Appointment and booking systems for salons, clinics, travel services, event management and home services.
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-top">
+<i class="fas fa-city"></i>
+</div>
+
+<div class="project-content">
+<h3>Urban Company Style Websites</h3>
+
+<p>
+Business listing and service platforms with login system, payment integration, maps, live leads and admin dashboard.
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<div class="project-top">
+<i class="fas fa-mobile-screen-button"></i>
+</div>
+
+<div class="project-content">
+<h3>Responsive Mobile Websites</h3>
+
+<p>
+Fast loading websites optimized for mobile phones, tablets and desktops with modern animations and smooth performance.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOCATION -->
+
+<section>
+
+<div class="location-box">
+
+<i class="fas fa-location-dot"></i>
+
+<h2>Based in Hyderabad</h2>
+
+<p style="margin-top:20px; color:#ccc; line-height:1.8;">
+Providing website development services in Hyderabad, Telangana and all over India.
+Custom websites with WhatsApp integration, booking systems, animations and modern UI/UX design.
+</p>
+
+<br>
+
+<h3 style="color:#ff6b00;">
+Call / WhatsApp : +91 8096130459
+</h3>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2 class="logo">M<span>Z</span>ill</h2>
+
+<br>
+
+<p>
+© 2026 MZill Web Solutions | Hyderabad
+</p>
+
+</footer>
+
+<!-- WHATSAPP FLOATING -->
+
+<a href="https://wa.me/918096130459" class="whatsapp-float" target="_blank">
+
+<i class="fab fa-whatsapp"></i>
+
+</a>
+
+<script>
+
+function sendWhatsApp(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let email = document.getElementById("email").value;
+let service = document.getElementById("service").value;
+let message = document.getElementById("message").value;
+
+let whatsappMessage =
+`Hello MZill Website Services
+
+Name: ${name}
+
+Phone: ${phone}
+
+Email: ${email}
+
+Service Needed: ${service}
+
+Project Details:
+${message}`;
+
+let url =
+"https://wa.me/918096130459?text=" +
+encodeURIComponent(whatsappMessage);
+
+window.open(url,'_blank');
+
+}
+
+</script>
+
+</body>
+</html>
